@@ -20,7 +20,12 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 // cookie parser middleware
 app.use(cookieParser());
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://hospital-app-krishna.netlify.app/",
+    credentials: true,
+  })
+);
 
 app.use("/api/users", userRoutes);
 app.use("/api/doctors", doctorRoutes);
