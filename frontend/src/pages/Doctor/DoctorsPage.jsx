@@ -23,6 +23,8 @@ function DoctorsPage() {
   }, [query]);
 
   const { isPending, doctors } = useGetDoctors(debounceQuery);
+  console.log("doctors", doctors);
+
   return (
     <>
       <section className="bg-[#fff9ae] ">
@@ -52,7 +54,7 @@ function DoctorsPage() {
           {!isPending && (
             <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
               {doctors.map((doctor) => (
-                <DoctorCard doctor={doctor} key={doctor.id} />
+                <DoctorCard doctor={doctor} key={doctor?._id} />
               ))}
               {doctors.length === 0 && !isPending && (
                 <p className="text-center">No doctor found</p>

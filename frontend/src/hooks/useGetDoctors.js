@@ -14,7 +14,7 @@ export function useGetDoctors(query) {
             withCredentials: true,
           },
         );
-        console.log(response.data);
+        console.log("doct", response.data);
         return response?.data;
       } catch (error) {
         console.log(error);

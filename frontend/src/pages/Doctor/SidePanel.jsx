@@ -10,7 +10,7 @@ function SidePanel({ doctorId, ticketPrice, timeSlots }) {
   const { user } = useUser();
   console.log(user);
 
-  const loggedIn = user._id === doctorId;
+  const loggedIn = user?._id === doctorId;
   console.log(loggedIn);
 
   const bookingHandler = () => {
