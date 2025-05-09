@@ -22,7 +22,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(
   cors({
-    origin: "https://hospital-app-krishna.netlify.app",
+    origin: true,
     credentials: true,
   })
 );

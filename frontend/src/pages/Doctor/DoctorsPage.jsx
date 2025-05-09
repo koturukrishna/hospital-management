@@ -53,7 +53,7 @@ function DoctorsPage() {
           {isPending && <Loader />}
           {!isPending && (
             <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-              {doctors.map((doctor) => (
+              {doctors?.map((doctor) => (
                 <DoctorCard doctor={doctor} key={doctor?._id} />
               ))}
               {doctors.length === 0 && !isPending && (
