@@ -20,12 +20,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 // cookie parser middleware
 app.use(cookieParser());
-app.use(
-  cors({
-    origin: "http://localhost:5174",
-    credentials: true,
-  })
-);
+app.use(cors());
 
 app.use("/api/users", userRoutes);
 app.use("/api/doctors", doctorRoutes);
