@@ -104,8 +104,12 @@ export const login = asyncHandler(async (req, res) => {
 export const logoutUser = (req, res) => {
   res.cookie("jwt", "", {
     httpOnly: true,
+    secure: true, // Netlify uses HTTPS, so this must be true
+    sameSite: "None", // Required for cross-origin cookies
+    maxAge: 24 * 60 * 60 * 1000, // 1 day in ms
     expires: new Date(0),
   });
+
   res.status(200).json({ message: "Logged out successfully" });
 };
 
